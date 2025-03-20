@@ -1,5 +1,4 @@
 import 'package:ar_furniture/Screen/Auth/login_screen.dart';
-import 'package:ar_furniture/Screen/Home/home_screen.dart';
 import 'package:ar_furniture/Screen/entry_point.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -10,15 +9,35 @@ class UserModel {
   String uid;
   String name;
   String email;
+  String? location;
+  String? profileImage;
 
-  UserModel({required this.uid, required this.name, required this.email});
+  UserModel({
+    required this.uid, 
+    required this.name, 
+    required this.email,
+    this.location,
+    this.profileImage,
+  });
 
   Map<String, dynamic> toMap() {
     return {
       'uid': uid,
       'name': name,
       'email': email,
+      'location': location,
+      'profileImage': profileImage,
     };
+  }
+
+  factory UserModel.fromMap(Map<String, dynamic> map) {
+    return UserModel(
+      uid: map['uid'] ?? '',
+      name: map['name'] ?? '',
+      email: map['email'] ?? '',
+      location: map['location'],
+      profileImage: map['profileImage'],
+    );
   }
 }
 

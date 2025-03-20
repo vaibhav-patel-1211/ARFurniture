@@ -39,32 +39,25 @@ class _EntryPointState extends State<EntryPoint> {
 
     return Scaffold(
       appBar: AppBar(
+        // pinned: true,
+        // floating: true,
+        // snap: true,
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         leading: const SizedBox(),
         leadingWidth: 0,
         centerTitle: false,
-        title: Padding(
-          padding: const EdgeInsets.only(top: 15),
-          child: Text(
-            "Homely",
-            style: GoogleFonts.katibeh(fontSize: 40),
-          ),
+        title: SvgPicture.asset(
+          "assets/logo/Shoplon.svg",
+          colorFilter: ColorFilter.mode(
+              Theme.of(context).iconTheme.color!, BlendMode.srcIn),
+          height: 20,
+          width: 100,
         ),
         actions: [
           IconButton(
             onPressed: () {},
             icon: SvgPicture.asset(
               "assets/icons/Search.svg",
-              height: 24,
-              colorFilter: ColorFilter.mode(
-                  Theme.of(context).textTheme.bodyLarge!.color!,
-                  BlendMode.srcIn),
-            ),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: SvgPicture.asset(
-              "assets/icons/Notification.svg",
               height: 24,
               colorFilter: ColorFilter.mode(
                   Theme.of(context).textTheme.bodyLarge!.color!,

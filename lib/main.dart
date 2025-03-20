@@ -1,5 +1,6 @@
 import 'package:ar_furniture/Screen/Auth/auth_screen.dart';
 import 'package:ar_furniture/Screen/Auth/auth_service.dart';
+import 'package:ar_furniture/services/profile_service.dart';
 import 'package:ar_furniture/theme/app_theme.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
       // Initial binding for AuthService
       initialBinding: BindingsBuilder(() {
         Get.put(AuthService());
+        Get.put(ProfileService());
       }),
 
       // Home page

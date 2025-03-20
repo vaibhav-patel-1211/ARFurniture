@@ -1,5 +1,4 @@
 import 'package:ar_furniture/Screen/Auth/login_screen.dart';
-import 'package:ar_furniture/Screen/Home/home_screen.dart';
 import 'package:ar_furniture/Screen/entry_point.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
